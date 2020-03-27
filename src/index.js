@@ -23,7 +23,7 @@ async function main(minScore) {
   )
     .map((score, i) => ({
       ...matchedGames[i],
-      review: score.review_score_desc,
+      review: score.review_score_desc || "ERROR",
       reviews: score.total_reviews,
       positive_avg:
         Math.round((score.total_positive / score.total_reviews) * 100) + "%"
